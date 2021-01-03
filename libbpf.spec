@@ -4,7 +4,7 @@
 #
 Name     : libbpf
 Version  : 0.0.9
-Release  : 2
+Release  : 3
 URL      : https://github.com/libbpf/libbpf/archive/v0.0.9/libbpf-0.0.9.tar.gz
 Source0  : https://github.com/libbpf/libbpf/archive/v0.0.9/libbpf-0.0.9.tar.gz
 Summary  : No detailed summary available
@@ -14,6 +14,7 @@ Requires: libbpf-lib = %{version}-%{release}
 Requires: libbpf-license = %{version}-%{release}
 BuildRequires : elfutils-dev
 BuildRequires : pkgconfig(libelf)
+Patch1: 0001-Fix-build-with-latest-gcc-binutils-with-LTO.patch
 
 %description
 This is a mirror of [bpf-next linux tree](https://kernel.googlesource.com/pub/scm/linux/kernel/git/bpf/bpf-next)'s
@@ -50,13 +51,14 @@ license components for the libbpf package.
 %prep
 %setup -q -n libbpf-0.0.9
 cd %{_builddir}/libbpf-0.0.9
+%patch1 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1595289842
+export SOURCE_DATE_EPOCH=1609698623
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -71,7 +73,7 @@ popd
 
 
 %install
-export SOURCE_DATE_EPOCH=1595289842
+export SOURCE_DATE_EPOCH=1609698623
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libbpf
 cp %{_builddir}/libbpf-0.0.9/LICENSE.BSD-2-Clause %{buildroot}/usr/share/package-licenses/libbpf/34c5034377edef1080538bd0d4f5cf9b78e22dff

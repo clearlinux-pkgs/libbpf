@@ -1,0 +1,50 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Patrick McCarty <patrick.mccarty@intel.com>
+Date: Sun, 3 Jan 2021 06:35:18 +0000
+Subject: [PATCH] Fix build with latest gcc/binutils with LTO
+
+After updating to binutils 2.35, the build began to fail with an
+assembler error. A bug was opened on the Red Hat Bugzilla a few days
+later for the same issue.
+
+https://bugzilla.redhat.com/show_bug.cgi?id=1863059
+
+Work around the problem by using the new `symver` attribute (introduced
+in GCC 10) as needed, instead of the `COMPAT_VERSION` and
+`DEFAULT_VERSION` macros, which expand to assembler directives.
+
+Upstream-Status: Inappropriate
+Signed-off-by: Patrick McCarty <patrick.mccarty@intel.com>
+---
+ src/xsk.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/xsk.c b/src/xsk.c
+index f7f4efb..67c9377 100644
+--- a/src/xsk.c
++++ b/src/xsk.c
+@@ -203,6 +203,7 @@ static int xsk_get_mmap_offsets(int fd, struct xdp_mmap_offsets *off)
+ 	return -EINVAL;
+ }
+ 
++__attribute__((__symver__("xsk_umem__create@@LIBBPF_0.0.4")))
+ int xsk_umem__create_v0_0_4(struct xsk_umem **umem_ptr, void *umem_area,
+ 			    __u64 size, struct xsk_ring_prod *fill,
+ 			    struct xsk_ring_cons *comp,
+@@ -323,6 +324,7 @@ struct xsk_umem_config_v1 {
+ 	__u32 frame_headroom;
+ };
+ 
++__attribute__((__symver__("xsk_umem__create@LIBBPF_0.0.2")))
+ int xsk_umem__create_v0_0_2(struct xsk_umem **umem_ptr, void *umem_area,
+ 			    __u64 size, struct xsk_ring_prod *fill,
+ 			    struct xsk_ring_cons *comp,
+@@ -336,8 +338,6 @@ int xsk_umem__create_v0_0_2(struct xsk_umem **umem_ptr, void *umem_area,
+ 	return xsk_umem__create_v0_0_4(umem_ptr, umem_area, size, fill, comp,
+ 					&config);
+ }
+-COMPAT_VERSION(xsk_umem__create_v0_0_2, xsk_umem__create, LIBBPF_0.0.2)
+-DEFAULT_VERSION(xsk_umem__create_v0_0_4, xsk_umem__create, LIBBPF_0.0.4)
+ 
+ static int xsk_load_xdp_prog(struct xsk_socket *xsk)
+ {

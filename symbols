@@ -238,5 +238,6 @@ libbpf.so.0:ring_buffer__poll
 libbpf.so.0:xsk_socket__create
 libbpf.so.0:xsk_socket__delete
 libbpf.so.0:xsk_socket__fd
+libbpf.so.0:xsk_umem__create
 libbpf.so.0:xsk_umem__delete
 libbpf.so.0:xsk_umem__fd
