@@ -20,18 +20,18 @@ Signed-off-by: Patrick McCarty <patrick.mccarty@intel.com>
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/src/xsk.c b/src/xsk.c
-index f7f4efb..67c9377 100644
+index e3c98c0..3cb6294 100644
 --- a/src/xsk.c
 +++ b/src/xsk.c
-@@ -203,6 +203,7 @@ static int xsk_get_mmap_offsets(int fd, struct xdp_mmap_offsets *off)
- 	return -EINVAL;
+@@ -271,6 +271,7 @@ out_mmap:
+ 	return err;
  }
  
 +__attribute__((__symver__("xsk_umem__create@@LIBBPF_0.0.4")))
  int xsk_umem__create_v0_0_4(struct xsk_umem **umem_ptr, void *umem_area,
  			    __u64 size, struct xsk_ring_prod *fill,
  			    struct xsk_ring_cons *comp,
-@@ -323,6 +324,7 @@ struct xsk_umem_config_v1 {
+@@ -335,6 +336,7 @@ struct xsk_umem_config_v1 {
  	__u32 frame_headroom;
  };
  
@@ -39,7 +39,7 @@ index f7f4efb..67c9377 100644
  int xsk_umem__create_v0_0_2(struct xsk_umem **umem_ptr, void *umem_area,
  			    __u64 size, struct xsk_ring_prod *fill,
  			    struct xsk_ring_cons *comp,
-@@ -336,8 +338,6 @@ int xsk_umem__create_v0_0_2(struct xsk_umem **umem_ptr, void *umem_area,
+@@ -348,8 +350,6 @@ int xsk_umem__create_v0_0_2(struct xsk_umem **umem_ptr, void *umem_area,
  	return xsk_umem__create_v0_0_4(umem_ptr, umem_area, size, fill, comp,
  					&config);
  }
