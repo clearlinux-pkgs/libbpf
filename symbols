@@ -9,6 +9,7 @@ libbpf.so.0:LIBBPF_0.0.8
 libbpf.so.0:LIBBPF_0.0.9
 libbpf.so.0:LIBBPF_0.1.0
 libbpf.so.0:LIBBPF_0.2.0
+libbpf.so.0:LIBBPF_0.3.0
 libbpf.so.0:bpf_btf_get_fd_by_id
 libbpf.so.0:bpf_btf_get_next_id
 libbpf.so.0:bpf_create_map
@@ -235,6 +236,7 @@ libbpf.so.0:btf__add_union
 libbpf.so.0:btf__add_var
 libbpf.so.0:btf__add_volatile
 libbpf.so.0:btf__align_of
+libbpf.so.0:btf__base_btf
 libbpf.so.0:btf__dedup
 libbpf.so.0:btf__endianness
 libbpf.so.0:btf__fd
@@ -251,9 +253,13 @@ libbpf.so.0:btf__load
 libbpf.so.0:btf__name_by_offset
 libbpf.so.0:btf__new
 libbpf.so.0:btf__new_empty
+libbpf.so.0:btf__new_empty_split
 libbpf.so.0:btf__parse
 libbpf.so.0:btf__parse_elf
+libbpf.so.0:btf__parse_elf_split
 libbpf.so.0:btf__parse_raw
+libbpf.so.0:btf__parse_raw_split
+libbpf.so.0:btf__parse_split
 libbpf.so.0:btf__pointer_size
 libbpf.so.0:btf__resolve_size
 libbpf.so.0:btf__resolve_type
@@ -292,13 +298,16 @@ libbpf.so.0:perf_buffer__new_raw
 libbpf.so.0:perf_buffer__poll
 libbpf.so.0:ring_buffer__add
 libbpf.so.0:ring_buffer__consume
+libbpf.so.0:ring_buffer__epoll_fd
 libbpf.so.0:ring_buffer__free
 libbpf.so.0:ring_buffer__new
 libbpf.so.0:ring_buffer__poll
+libbpf.so.0:xsk_setup_xdp_prog
 libbpf.so.0:xsk_socket__create
 libbpf.so.0:xsk_socket__create_shared
 libbpf.so.0:xsk_socket__delete
 libbpf.so.0:xsk_socket__fd
+libbpf.so.0:xsk_socket__update_xskmap
 libbpf.so.0:xsk_umem__create
 libbpf.so.0:xsk_umem__delete
 libbpf.so.0:xsk_umem__fd
