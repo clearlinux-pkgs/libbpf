@@ -10,6 +10,7 @@ libbpf.so.0:LIBBPF_0.0.9
 libbpf.so.0:LIBBPF_0.1.0
 libbpf.so.0:LIBBPF_0.2.0
 libbpf.so.0:LIBBPF_0.3.0
+libbpf.so.0:LIBBPF_0.4.0
 libbpf.so.0:bpf_btf_get_fd_by_id
 libbpf.so.0:bpf_btf_get_next_id
 libbpf.so.0:bpf_create_map
@@ -36,6 +37,10 @@ libbpf.so.0:bpf_link_detach
 libbpf.so.0:bpf_link_get_fd_by_id
 libbpf.so.0:bpf_link_get_next_id
 libbpf.so.0:bpf_link_update
+libbpf.so.0:bpf_linker__add_file
+libbpf.so.0:bpf_linker__finalize
+libbpf.so.0:bpf_linker__free
+libbpf.so.0:bpf_linker__new
 libbpf.so.0:bpf_load_btf
 libbpf.so.0:bpf_load_program
 libbpf.so.0:bpf_load_program_xattr
@@ -46,6 +51,7 @@ libbpf.so.0:bpf_map__def
 libbpf.so.0:bpf_map__fd
 libbpf.so.0:bpf_map__get_pin_path
 libbpf.so.0:bpf_map__ifindex
+libbpf.so.0:bpf_map__inner_map
 libbpf.so.0:bpf_map__is_internal
 libbpf.so.0:bpf_map__is_offload_neutral
 libbpf.so.0:bpf_map__is_pinned
@@ -117,6 +123,7 @@ libbpf.so.0:bpf_object__pin
 libbpf.so.0:bpf_object__pin_maps
 libbpf.so.0:bpf_object__pin_programs
 libbpf.so.0:bpf_object__priv
+libbpf.so.0:bpf_object__set_kversion
 libbpf.so.0:bpf_object__set_priv
 libbpf.so.0:bpf_object__unload
 libbpf.so.0:bpf_object__unpin_maps
@@ -214,6 +221,11 @@ libbpf.so.0:bpf_raw_tracepoint_open
 libbpf.so.0:bpf_set_link_xdp_fd
 libbpf.so.0:bpf_set_link_xdp_fd_opts
 libbpf.so.0:bpf_task_fd_query
+libbpf.so.0:bpf_tc_attach
+libbpf.so.0:bpf_tc_detach
+libbpf.so.0:bpf_tc_hook_create
+libbpf.so.0:bpf_tc_hook_destroy
+libbpf.so.0:bpf_tc_query
 libbpf.so.0:bpf_verify_program
 libbpf.so.0:btf__add_array
 libbpf.so.0:btf__add_const
@@ -222,6 +234,7 @@ libbpf.so.0:btf__add_datasec_var_info
 libbpf.so.0:btf__add_enum
 libbpf.so.0:btf__add_enum_value
 libbpf.so.0:btf__add_field
+libbpf.so.0:btf__add_float
 libbpf.so.0:btf__add_func
 libbpf.so.0:btf__add_func_param
 libbpf.so.0:btf__add_func_proto
@@ -231,6 +244,7 @@ libbpf.so.0:btf__add_ptr
 libbpf.so.0:btf__add_restrict
 libbpf.so.0:btf__add_str
 libbpf.so.0:btf__add_struct
+libbpf.so.0:btf__add_type
 libbpf.so.0:btf__add_typedef
 libbpf.so.0:btf__add_union
 libbpf.so.0:btf__add_var
