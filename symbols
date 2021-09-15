@@ -11,6 +11,7 @@ libbpf.so.0:LIBBPF_0.1.0
 libbpf.so.0:LIBBPF_0.2.0
 libbpf.so.0:LIBBPF_0.3.0
 libbpf.so.0:LIBBPF_0.4.0
+libbpf.so.0:LIBBPF_0.5.0
 libbpf.so.0:bpf_btf_get_fd_by_id
 libbpf.so.0:bpf_btf_get_next_id
 libbpf.so.0:bpf_create_map
@@ -51,6 +52,7 @@ libbpf.so.0:bpf_map__def
 libbpf.so.0:bpf_map__fd
 libbpf.so.0:bpf_map__get_pin_path
 libbpf.so.0:bpf_map__ifindex
+libbpf.so.0:bpf_map__initial_value
 libbpf.so.0:bpf_map__inner_map
 libbpf.so.0:bpf_map__is_internal
 libbpf.so.0:bpf_map__is_offload_neutral
@@ -62,6 +64,7 @@ libbpf.so.0:bpf_map__name
 libbpf.so.0:bpf_map__next
 libbpf.so.0:bpf_map__numa_node
 libbpf.so.0:bpf_map__pin
+libbpf.so.0:bpf_map__pin_path
 libbpf.so.0:bpf_map__prev
 libbpf.so.0:bpf_map__priv
 libbpf.so.0:bpf_map__resize
@@ -88,6 +91,7 @@ libbpf.so.0:bpf_map_get_next_id
 libbpf.so.0:bpf_map_get_next_key
 libbpf.so.0:bpf_map_lookup_and_delete_batch
 libbpf.so.0:bpf_map_lookup_and_delete_elem
+libbpf.so.0:bpf_map_lookup_and_delete_elem_flags
 libbpf.so.0:bpf_map_lookup_batch
 libbpf.so.0:bpf_map_lookup_elem
 libbpf.so.0:bpf_map_lookup_elem_flags
@@ -107,6 +111,7 @@ libbpf.so.0:bpf_object__find_map_by_offset
 libbpf.so.0:bpf_object__find_map_fd_by_name
 libbpf.so.0:bpf_object__find_program_by_name
 libbpf.so.0:bpf_object__find_program_by_title
+libbpf.so.0:bpf_object__gen_loader
 libbpf.so.0:bpf_object__kversion
 libbpf.so.0:bpf_object__load
 libbpf.so.0:bpf_object__load_skeleton
@@ -155,13 +160,17 @@ libbpf.so.0:bpf_program__attach_cgroup
 libbpf.so.0:bpf_program__attach_freplace
 libbpf.so.0:bpf_program__attach_iter
 libbpf.so.0:bpf_program__attach_kprobe
+libbpf.so.0:bpf_program__attach_kprobe_opts
 libbpf.so.0:bpf_program__attach_lsm
 libbpf.so.0:bpf_program__attach_netns
 libbpf.so.0:bpf_program__attach_perf_event
+libbpf.so.0:bpf_program__attach_perf_event_opts
 libbpf.so.0:bpf_program__attach_raw_tracepoint
 libbpf.so.0:bpf_program__attach_trace
 libbpf.so.0:bpf_program__attach_tracepoint
+libbpf.so.0:bpf_program__attach_tracepoint_opts
 libbpf.so.0:bpf_program__attach_uprobe
+libbpf.so.0:bpf_program__attach_uprobe_opts
 libbpf.so.0:bpf_program__attach_xdp
 libbpf.so.0:bpf_program__autoload
 libbpf.so.0:bpf_program__bpil_addr_to_offs
@@ -264,6 +273,11 @@ libbpf.so.0:btf__get_map_kv_tids
 libbpf.so.0:btf__get_nr_types
 libbpf.so.0:btf__get_raw_data
 libbpf.so.0:btf__load
+libbpf.so.0:btf__load_from_kernel_by_id
+libbpf.so.0:btf__load_from_kernel_by_id_split
+libbpf.so.0:btf__load_into_kernel
+libbpf.so.0:btf__load_module_btf
+libbpf.so.0:btf__load_vmlinux_btf
 libbpf.so.0:btf__name_by_offset
 libbpf.so.0:btf__new
 libbpf.so.0:btf__new_empty
@@ -283,6 +297,7 @@ libbpf.so.0:btf__set_pointer_size
 libbpf.so.0:btf__str_by_offset
 libbpf.so.0:btf__type_by_id
 libbpf.so.0:btf_dump__dump_type
+libbpf.so.0:btf_dump__dump_type_data
 libbpf.so.0:btf_dump__emit_type_decl
 libbpf.so.0:btf_dump__free
 libbpf.so.0:btf_dump__new
@@ -300,6 +315,7 @@ libbpf.so.0:libbpf_get_error
 libbpf.so.0:libbpf_num_possible_cpus
 libbpf.so.0:libbpf_prog_type_by_name
 libbpf.so.0:libbpf_set_print
+libbpf.so.0:libbpf_set_strict_mode
 libbpf.so.0:libbpf_strerror
 libbpf.so.0:perf_buffer__buffer_cnt
 libbpf.so.0:perf_buffer__buffer_fd
