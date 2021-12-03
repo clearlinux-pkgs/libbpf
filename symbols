@@ -12,6 +12,7 @@ libbpf.so.0:LIBBPF_0.2.0
 libbpf.so.0:LIBBPF_0.3.0
 libbpf.so.0:LIBBPF_0.4.0
 libbpf.so.0:LIBBPF_0.5.0
+libbpf.so.0:LIBBPF_0.6.0
 libbpf.so.0:bpf_btf_get_fd_by_id
 libbpf.so.0:bpf_btf_get_next_id
 libbpf.so.0:bpf_create_map
@@ -58,6 +59,7 @@ libbpf.so.0:bpf_map__is_internal
 libbpf.so.0:bpf_map__is_offload_neutral
 libbpf.so.0:bpf_map__is_pinned
 libbpf.so.0:bpf_map__key_size
+libbpf.so.0:bpf_map__map_extra
 libbpf.so.0:bpf_map__map_flags
 libbpf.so.0:bpf_map__max_entries
 libbpf.so.0:bpf_map__name
@@ -73,6 +75,7 @@ libbpf.so.0:bpf_map__set_ifindex
 libbpf.so.0:bpf_map__set_initial_value
 libbpf.so.0:bpf_map__set_inner_map_fd
 libbpf.so.0:bpf_map__set_key_size
+libbpf.so.0:bpf_map__set_map_extra
 libbpf.so.0:bpf_map__set_map_flags
 libbpf.so.0:bpf_map__set_max_entries
 libbpf.so.0:bpf_map__set_numa_node
@@ -83,6 +86,7 @@ libbpf.so.0:bpf_map__set_value_size
 libbpf.so.0:bpf_map__type
 libbpf.so.0:bpf_map__unpin
 libbpf.so.0:bpf_map__value_size
+libbpf.so.0:bpf_map_create
 libbpf.so.0:bpf_map_delete_batch
 libbpf.so.0:bpf_map_delete_elem
 libbpf.so.0:bpf_map_freeze
@@ -118,6 +122,8 @@ libbpf.so.0:bpf_object__load_skeleton
 libbpf.so.0:bpf_object__load_xattr
 libbpf.so.0:bpf_object__name
 libbpf.so.0:bpf_object__next
+libbpf.so.0:bpf_object__next_map
+libbpf.so.0:bpf_object__next_program
 libbpf.so.0:bpf_object__open
 libbpf.so.0:bpf_object__open_buffer
 libbpf.so.0:bpf_object__open_file
@@ -127,6 +133,8 @@ libbpf.so.0:bpf_object__open_xattr
 libbpf.so.0:bpf_object__pin
 libbpf.so.0:bpf_object__pin_maps
 libbpf.so.0:bpf_object__pin_programs
+libbpf.so.0:bpf_object__prev_map
+libbpf.so.0:bpf_object__prev_program
 libbpf.so.0:bpf_object__priv
 libbpf.so.0:bpf_object__set_kversion
 libbpf.so.0:bpf_object__set_priv
@@ -150,6 +158,7 @@ libbpf.so.0:bpf_prog_linfo__lfind
 libbpf.so.0:bpf_prog_linfo__lfind_addr_func
 libbpf.so.0:bpf_prog_linfo__new
 libbpf.so.0:bpf_prog_load
+libbpf.so.0:bpf_prog_load_deprecated
 libbpf.so.0:bpf_prog_load_xattr
 libbpf.so.0:bpf_prog_query
 libbpf.so.0:bpf_prog_test_run
@@ -176,9 +185,12 @@ libbpf.so.0:bpf_program__autoload
 libbpf.so.0:bpf_program__bpil_addr_to_offs
 libbpf.so.0:bpf_program__bpil_offs_to_addr
 libbpf.so.0:bpf_program__fd
+libbpf.so.0:bpf_program__flags
 libbpf.so.0:bpf_program__get_expected_attach_type
 libbpf.so.0:bpf_program__get_prog_info_linear
 libbpf.so.0:bpf_program__get_type
+libbpf.so.0:bpf_program__insn_cnt
+libbpf.so.0:bpf_program__insns
 libbpf.so.0:bpf_program__is_extension
 libbpf.so.0:bpf_program__is_kprobe
 libbpf.so.0:bpf_program__is_lsm
@@ -197,7 +209,6 @@ libbpf.so.0:bpf_program__name
 libbpf.so.0:bpf_program__next
 libbpf.so.0:bpf_program__nth_fd
 libbpf.so.0:bpf_program__pin
-libbpf.so.0:bpf_program__pin_instance
 libbpf.so.0:bpf_program__prev
 libbpf.so.0:bpf_program__priv
 libbpf.so.0:bpf_program__section_name
@@ -205,6 +216,7 @@ libbpf.so.0:bpf_program__set_attach_target
 libbpf.so.0:bpf_program__set_autoload
 libbpf.so.0:bpf_program__set_expected_attach_type
 libbpf.so.0:bpf_program__set_extension
+libbpf.so.0:bpf_program__set_flags
 libbpf.so.0:bpf_program__set_ifindex
 libbpf.so.0:bpf_program__set_kprobe
 libbpf.so.0:bpf_program__set_lsm
@@ -237,9 +249,11 @@ libbpf.so.0:bpf_tc_hook_destroy
 libbpf.so.0:bpf_tc_query
 libbpf.so.0:bpf_verify_program
 libbpf.so.0:btf__add_array
+libbpf.so.0:btf__add_btf
 libbpf.so.0:btf__add_const
 libbpf.so.0:btf__add_datasec
 libbpf.so.0:btf__add_datasec_var_info
+libbpf.so.0:btf__add_decl_tag
 libbpf.so.0:btf__add_enum
 libbpf.so.0:btf__add_enum_value
 libbpf.so.0:btf__add_field
@@ -254,6 +268,7 @@ libbpf.so.0:btf__add_restrict
 libbpf.so.0:btf__add_str
 libbpf.so.0:btf__add_struct
 libbpf.so.0:btf__add_type
+libbpf.so.0:btf__add_type_tag
 libbpf.so.0:btf__add_typedef
 libbpf.so.0:btf__add_union
 libbpf.so.0:btf__add_var
@@ -261,6 +276,7 @@ libbpf.so.0:btf__add_volatile
 libbpf.so.0:btf__align_of
 libbpf.so.0:btf__base_btf
 libbpf.so.0:btf__dedup
+libbpf.so.0:btf__dedup_deprecated
 libbpf.so.0:btf__endianness
 libbpf.so.0:btf__fd
 libbpf.so.0:btf__finalize_data
@@ -289,6 +305,7 @@ libbpf.so.0:btf__parse_raw
 libbpf.so.0:btf__parse_raw_split
 libbpf.so.0:btf__parse_split
 libbpf.so.0:btf__pointer_size
+libbpf.so.0:btf__raw_data
 libbpf.so.0:btf__resolve_size
 libbpf.so.0:btf__resolve_type
 libbpf.so.0:btf__set_endianness
@@ -296,11 +313,13 @@ libbpf.so.0:btf__set_fd
 libbpf.so.0:btf__set_pointer_size
 libbpf.so.0:btf__str_by_offset
 libbpf.so.0:btf__type_by_id
+libbpf.so.0:btf__type_cnt
 libbpf.so.0:btf_dump__dump_type
 libbpf.so.0:btf_dump__dump_type_data
 libbpf.so.0:btf_dump__emit_type_decl
 libbpf.so.0:btf_dump__free
 libbpf.so.0:btf_dump__new
+libbpf.so.0:btf_dump__new_deprecated
 libbpf.so.0:btf_ext__free
 libbpf.so.0:btf_ext__func_info_rec_size
 libbpf.so.0:btf_ext__get_raw_data
@@ -312,11 +331,14 @@ libbpf.so.0:libbpf_attach_type_by_name
 libbpf.so.0:libbpf_find_kernel_btf
 libbpf.so.0:libbpf_find_vmlinux_btf_id
 libbpf.so.0:libbpf_get_error
+libbpf.so.0:libbpf_major_version
+libbpf.so.0:libbpf_minor_version
 libbpf.so.0:libbpf_num_possible_cpus
 libbpf.so.0:libbpf_prog_type_by_name
 libbpf.so.0:libbpf_set_print
 libbpf.so.0:libbpf_set_strict_mode
 libbpf.so.0:libbpf_strerror
+libbpf.so.0:libbpf_version_string
 libbpf.so.0:perf_buffer__buffer_cnt
 libbpf.so.0:perf_buffer__buffer_fd
 libbpf.so.0:perf_buffer__consume
@@ -324,7 +346,9 @@ libbpf.so.0:perf_buffer__consume_buffer
 libbpf.so.0:perf_buffer__epoll_fd
 libbpf.so.0:perf_buffer__free
 libbpf.so.0:perf_buffer__new
+libbpf.so.0:perf_buffer__new_deprecated
 libbpf.so.0:perf_buffer__new_raw
+libbpf.so.0:perf_buffer__new_raw_deprecated
 libbpf.so.0:perf_buffer__poll
 libbpf.so.0:ring_buffer__add
 libbpf.so.0:ring_buffer__consume
