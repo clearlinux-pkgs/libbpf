@@ -13,8 +13,10 @@ libbpf.so.0:LIBBPF_0.3.0
 libbpf.so.0:LIBBPF_0.4.0
 libbpf.so.0:LIBBPF_0.5.0
 libbpf.so.0:LIBBPF_0.6.0
+libbpf.so.0:LIBBPF_0.7.0
 libbpf.so.0:bpf_btf_get_fd_by_id
 libbpf.so.0:bpf_btf_get_next_id
+libbpf.so.0:bpf_btf_load
 libbpf.so.0:bpf_create_map
 libbpf.so.0:bpf_create_map_in_map
 libbpf.so.0:bpf_create_map_in_map_node
@@ -147,6 +149,7 @@ libbpf.so.0:bpf_probe_large_insn_limit
 libbpf.so.0:bpf_probe_map_type
 libbpf.so.0:bpf_probe_prog_type
 libbpf.so.0:bpf_prog_attach
+libbpf.so.0:bpf_prog_attach_opts
 libbpf.so.0:bpf_prog_attach_xattr
 libbpf.so.0:bpf_prog_bind_map
 libbpf.so.0:bpf_prog_detach
@@ -184,6 +187,7 @@ libbpf.so.0:bpf_program__attach_xdp
 libbpf.so.0:bpf_program__autoload
 libbpf.so.0:bpf_program__bpil_addr_to_offs
 libbpf.so.0:bpf_program__bpil_offs_to_addr
+libbpf.so.0:bpf_program__expected_attach_type
 libbpf.so.0:bpf_program__fd
 libbpf.so.0:bpf_program__flags
 libbpf.so.0:bpf_program__get_expected_attach_type
@@ -205,6 +209,8 @@ libbpf.so.0:bpf_program__is_tracepoint
 libbpf.so.0:bpf_program__is_tracing
 libbpf.so.0:bpf_program__is_xdp
 libbpf.so.0:bpf_program__load
+libbpf.so.0:bpf_program__log_buf
+libbpf.so.0:bpf_program__log_level
 libbpf.so.0:bpf_program__name
 libbpf.so.0:bpf_program__next
 libbpf.so.0:bpf_program__nth_fd
@@ -219,6 +225,8 @@ libbpf.so.0:bpf_program__set_extension
 libbpf.so.0:bpf_program__set_flags
 libbpf.so.0:bpf_program__set_ifindex
 libbpf.so.0:bpf_program__set_kprobe
+libbpf.so.0:bpf_program__set_log_buf
+libbpf.so.0:bpf_program__set_log_level
 libbpf.so.0:bpf_program__set_lsm
 libbpf.so.0:bpf_program__set_perf_event
 libbpf.so.0:bpf_program__set_prep
@@ -235,6 +243,7 @@ libbpf.so.0:bpf_program__set_type
 libbpf.so.0:bpf_program__set_xdp
 libbpf.so.0:bpf_program__size
 libbpf.so.0:bpf_program__title
+libbpf.so.0:bpf_program__type
 libbpf.so.0:bpf_program__unload
 libbpf.so.0:bpf_program__unpin
 libbpf.so.0:bpf_program__unpin_instance
@@ -248,6 +257,10 @@ libbpf.so.0:bpf_tc_hook_create
 libbpf.so.0:bpf_tc_hook_destroy
 libbpf.so.0:bpf_tc_query
 libbpf.so.0:bpf_verify_program
+libbpf.so.0:bpf_xdp_attach
+libbpf.so.0:bpf_xdp_detach
+libbpf.so.0:bpf_xdp_query
+libbpf.so.0:bpf_xdp_query_id
 libbpf.so.0:btf__add_array
 libbpf.so.0:btf__add_btf
 libbpf.so.0:btf__add_const
@@ -334,6 +347,9 @@ libbpf.so.0:libbpf_get_error
 libbpf.so.0:libbpf_major_version
 libbpf.so.0:libbpf_minor_version
 libbpf.so.0:libbpf_num_possible_cpus
+libbpf.so.0:libbpf_probe_bpf_helper
+libbpf.so.0:libbpf_probe_bpf_map_type
+libbpf.so.0:libbpf_probe_bpf_prog_type
 libbpf.so.0:libbpf_prog_type_by_name
 libbpf.so.0:libbpf_set_print
 libbpf.so.0:libbpf_set_strict_mode
