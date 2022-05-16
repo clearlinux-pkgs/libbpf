@@ -14,6 +14,7 @@ libbpf.so.0:LIBBPF_0.4.0
 libbpf.so.0:LIBBPF_0.5.0
 libbpf.so.0:LIBBPF_0.6.0
 libbpf.so.0:LIBBPF_0.7.0
+libbpf.so.0:LIBBPF_0.8.0
 libbpf.so.0:bpf_btf_get_fd_by_id
 libbpf.so.0:bpf_btf_get_next_id
 libbpf.so.0:bpf_btf_load
@@ -49,10 +50,13 @@ libbpf.so.0:bpf_load_btf
 libbpf.so.0:bpf_load_program
 libbpf.so.0:bpf_load_program_xattr
 libbpf.so.0:bpf_map__attach_struct_ops
+libbpf.so.0:bpf_map__autocreate
 libbpf.so.0:bpf_map__btf_key_type_id
 libbpf.so.0:bpf_map__btf_value_type_id
 libbpf.so.0:bpf_map__def
+libbpf.so.0:bpf_map__delete_elem
 libbpf.so.0:bpf_map__fd
+libbpf.so.0:bpf_map__get_next_key
 libbpf.so.0:bpf_map__get_pin_path
 libbpf.so.0:bpf_map__ifindex
 libbpf.so.0:bpf_map__initial_value
@@ -61,6 +65,8 @@ libbpf.so.0:bpf_map__is_internal
 libbpf.so.0:bpf_map__is_offload_neutral
 libbpf.so.0:bpf_map__is_pinned
 libbpf.so.0:bpf_map__key_size
+libbpf.so.0:bpf_map__lookup_and_delete_elem
+libbpf.so.0:bpf_map__lookup_elem
 libbpf.so.0:bpf_map__map_extra
 libbpf.so.0:bpf_map__map_flags
 libbpf.so.0:bpf_map__max_entries
@@ -73,6 +79,7 @@ libbpf.so.0:bpf_map__prev
 libbpf.so.0:bpf_map__priv
 libbpf.so.0:bpf_map__resize
 libbpf.so.0:bpf_map__reuse_fd
+libbpf.so.0:bpf_map__set_autocreate
 libbpf.so.0:bpf_map__set_ifindex
 libbpf.so.0:bpf_map__set_initial_value
 libbpf.so.0:bpf_map__set_inner_map_fd
@@ -87,10 +94,12 @@ libbpf.so.0:bpf_map__set_type
 libbpf.so.0:bpf_map__set_value_size
 libbpf.so.0:bpf_map__type
 libbpf.so.0:bpf_map__unpin
+libbpf.so.0:bpf_map__update_elem
 libbpf.so.0:bpf_map__value_size
 libbpf.so.0:bpf_map_create
 libbpf.so.0:bpf_map_delete_batch
 libbpf.so.0:bpf_map_delete_elem
+libbpf.so.0:bpf_map_delete_elem_flags
 libbpf.so.0:bpf_map_freeze
 libbpf.so.0:bpf_map_get_fd_by_id
 libbpf.so.0:bpf_map_get_next_id
@@ -111,6 +120,7 @@ libbpf.so.0:bpf_object__btf
 libbpf.so.0:bpf_object__btf_fd
 libbpf.so.0:bpf_object__close
 libbpf.so.0:bpf_object__destroy_skeleton
+libbpf.so.0:bpf_object__destroy_subskeleton
 libbpf.so.0:bpf_object__detach_skeleton
 libbpf.so.0:bpf_object__find_map_by_name
 libbpf.so.0:bpf_object__find_map_by_offset
@@ -131,6 +141,7 @@ libbpf.so.0:bpf_object__open_buffer
 libbpf.so.0:bpf_object__open_file
 libbpf.so.0:bpf_object__open_mem
 libbpf.so.0:bpf_object__open_skeleton
+libbpf.so.0:bpf_object__open_subskeleton
 libbpf.so.0:bpf_object__open_xattr
 libbpf.so.0:bpf_object__pin
 libbpf.so.0:bpf_object__pin_maps
@@ -172,6 +183,7 @@ libbpf.so.0:bpf_program__attach_cgroup
 libbpf.so.0:bpf_program__attach_freplace
 libbpf.so.0:bpf_program__attach_iter
 libbpf.so.0:bpf_program__attach_kprobe
+libbpf.so.0:bpf_program__attach_kprobe_multi_opts
 libbpf.so.0:bpf_program__attach_kprobe_opts
 libbpf.so.0:bpf_program__attach_lsm
 libbpf.so.0:bpf_program__attach_netns
@@ -179,10 +191,12 @@ libbpf.so.0:bpf_program__attach_perf_event
 libbpf.so.0:bpf_program__attach_perf_event_opts
 libbpf.so.0:bpf_program__attach_raw_tracepoint
 libbpf.so.0:bpf_program__attach_trace
+libbpf.so.0:bpf_program__attach_trace_opts
 libbpf.so.0:bpf_program__attach_tracepoint
 libbpf.so.0:bpf_program__attach_tracepoint_opts
 libbpf.so.0:bpf_program__attach_uprobe
 libbpf.so.0:bpf_program__attach_uprobe_opts
+libbpf.so.0:bpf_program__attach_usdt
 libbpf.so.0:bpf_program__attach_xdp
 libbpf.so.0:bpf_program__autoload
 libbpf.so.0:bpf_program__bpil_addr_to_offs
@@ -224,6 +238,7 @@ libbpf.so.0:bpf_program__set_expected_attach_type
 libbpf.so.0:bpf_program__set_extension
 libbpf.so.0:bpf_program__set_flags
 libbpf.so.0:bpf_program__set_ifindex
+libbpf.so.0:bpf_program__set_insns
 libbpf.so.0:bpf_program__set_kprobe
 libbpf.so.0:bpf_program__set_log_buf
 libbpf.so.0:bpf_program__set_log_level
@@ -351,9 +366,11 @@ libbpf.so.0:libbpf_probe_bpf_helper
 libbpf.so.0:libbpf_probe_bpf_map_type
 libbpf.so.0:libbpf_probe_bpf_prog_type
 libbpf.so.0:libbpf_prog_type_by_name
+libbpf.so.0:libbpf_register_prog_handler
 libbpf.so.0:libbpf_set_print
 libbpf.so.0:libbpf_set_strict_mode
 libbpf.so.0:libbpf_strerror
+libbpf.so.0:libbpf_unregister_prog_handler
 libbpf.so.0:libbpf_version_string
 libbpf.so.0:perf_buffer__buffer_cnt
 libbpf.so.0:perf_buffer__buffer_fd
