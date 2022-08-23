@@ -4,7 +4,7 @@
 #
 Name     : libbpf
 Version  : 1.0.0
-Release  : 13
+Release  : 14
 URL      : https://github.com/libbpf/libbpf/archive/v1.0.0/libbpf-1.0.0.tar.gz
 Source0  : https://github.com/libbpf/libbpf/archive/v1.0.0/libbpf-1.0.0.tar.gz
 Summary  : No detailed summary available
