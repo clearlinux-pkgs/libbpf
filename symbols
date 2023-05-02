@@ -17,8 +17,10 @@ libbpf.so.1:LIBBPF_0.7.0
 libbpf.so.1:LIBBPF_0.8.0
 libbpf.so.1:LIBBPF_1.0.0
 libbpf.so.1:LIBBPF_1.1.0
+libbpf.so.1:LIBBPF_1.2.0
 libbpf.so.1:bpf_btf_get_fd_by_id
 libbpf.so.1:bpf_btf_get_fd_by_id_opts
+libbpf.so.1:bpf_btf_get_info_by_fd
 libbpf.so.1:bpf_btf_get_next_id
 libbpf.so.1:bpf_btf_load
 libbpf.so.1:bpf_enable_stats
@@ -31,11 +33,13 @@ libbpf.so.1:bpf_link__open
 libbpf.so.1:bpf_link__pin
 libbpf.so.1:bpf_link__pin_path
 libbpf.so.1:bpf_link__unpin
+libbpf.so.1:bpf_link__update_map
 libbpf.so.1:bpf_link__update_program
 libbpf.so.1:bpf_link_create
 libbpf.so.1:bpf_link_detach
 libbpf.so.1:bpf_link_get_fd_by_id
 libbpf.so.1:bpf_link_get_fd_by_id_opts
+libbpf.so.1:bpf_link_get_info_by_fd
 libbpf.so.1:bpf_link_get_next_id
 libbpf.so.1:bpf_link_update
 libbpf.so.1:bpf_linker__add_file
@@ -89,6 +93,7 @@ libbpf.so.1:bpf_map_delete_elem_flags
 libbpf.so.1:bpf_map_freeze
 libbpf.so.1:bpf_map_get_fd_by_id
 libbpf.so.1:bpf_map_get_fd_by_id_opts
+libbpf.so.1:bpf_map_get_info_by_fd
 libbpf.so.1:bpf_map_get_next_id
 libbpf.so.1:bpf_map_get_next_key
 libbpf.so.1:bpf_map_lookup_and_delete_batch
@@ -140,6 +145,7 @@ libbpf.so.1:bpf_prog_detach
 libbpf.so.1:bpf_prog_detach2
 libbpf.so.1:bpf_prog_get_fd_by_id
 libbpf.so.1:bpf_prog_get_fd_by_id_opts
+libbpf.so.1:bpf_prog_get_info_by_fd
 libbpf.so.1:bpf_prog_get_next_id
 libbpf.so.1:bpf_prog_linfo__free
 libbpf.so.1:bpf_prog_linfo__lfind
