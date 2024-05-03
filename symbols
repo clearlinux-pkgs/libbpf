@@ -19,6 +19,7 @@ libbpf.so.1:LIBBPF_1.0.0
 libbpf.so.1:LIBBPF_1.1.0
 libbpf.so.1:LIBBPF_1.2.0
 libbpf.so.1:LIBBPF_1.3.0
+libbpf.so.1:LIBBPF_1.4.0
 libbpf.so.1:bpf_btf_get_fd_by_id
 libbpf.so.1:bpf_btf_get_fd_by_id_opts
 libbpf.so.1:bpf_btf_get_info_by_fd
@@ -174,6 +175,7 @@ libbpf.so.1:bpf_program__attach_netns
 libbpf.so.1:bpf_program__attach_perf_event
 libbpf.so.1:bpf_program__attach_perf_event_opts
 libbpf.so.1:bpf_program__attach_raw_tracepoint
+libbpf.so.1:bpf_program__attach_raw_tracepoint_opts
 libbpf.so.1:bpf_program__attach_tcx
 libbpf.so.1:bpf_program__attach_trace
 libbpf.so.1:bpf_program__attach_trace_opts
@@ -212,12 +214,14 @@ libbpf.so.1:bpf_program__type
 libbpf.so.1:bpf_program__unload
 libbpf.so.1:bpf_program__unpin
 libbpf.so.1:bpf_raw_tracepoint_open
+libbpf.so.1:bpf_raw_tracepoint_open_opts
 libbpf.so.1:bpf_task_fd_query
 libbpf.so.1:bpf_tc_attach
 libbpf.so.1:bpf_tc_detach
 libbpf.so.1:bpf_tc_hook_create
 libbpf.so.1:bpf_tc_hook_destroy
 libbpf.so.1:bpf_tc_query
+libbpf.so.1:bpf_token_create
 libbpf.so.1:bpf_xdp_attach
 libbpf.so.1:bpf_xdp_detach
 libbpf.so.1:bpf_xdp_query
@@ -268,6 +272,7 @@ libbpf.so.1:btf__name_by_offset
 libbpf.so.1:btf__new
 libbpf.so.1:btf__new_empty
 libbpf.so.1:btf__new_empty_split
+libbpf.so.1:btf__new_split
 libbpf.so.1:btf__parse
 libbpf.so.1:btf__parse_elf
 libbpf.so.1:btf__parse_elf_split
@@ -292,6 +297,7 @@ libbpf.so.1:btf_dump__new
 libbpf.so.1:btf_ext__free
 libbpf.so.1:btf_ext__get_raw_data
 libbpf.so.1:btf_ext__new
+libbpf.so.1:btf_ext__raw_data
 libbpf.so.1:libbpf_attach_type_by_name
 libbpf.so.1:libbpf_bpf_attach_type_str
 libbpf.so.1:libbpf_bpf_link_type_str
@@ -308,6 +314,7 @@ libbpf.so.1:libbpf_probe_bpf_map_type
 libbpf.so.1:libbpf_probe_bpf_prog_type
 libbpf.so.1:libbpf_prog_type_by_name
 libbpf.so.1:libbpf_register_prog_handler
+libbpf.so.1:libbpf_set_memlock_rlim
 libbpf.so.1:libbpf_set_print
 libbpf.so.1:libbpf_set_strict_mode
 libbpf.so.1:libbpf_strerror
