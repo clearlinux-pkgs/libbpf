@@ -6,10 +6,10 @@
 # autospec commit: b858a2a
 #
 Name     : libbpf
-Version  : 1.4.4
-Release  : 24
-URL      : https://github.com/libbpf/libbpf/archive/v1.4.4/libbpf-1.4.4.tar.gz
-Source0  : https://github.com/libbpf/libbpf/archive/v1.4.4/libbpf-1.4.4.tar.gz
+Version  : 1.4.5
+Release  : 25
+URL      : https://github.com/libbpf/libbpf/archive/v1.4.5/libbpf-1.4.5.tar.gz
+Source0  : https://github.com/libbpf/libbpf/archive/v1.4.5/libbpf-1.4.5.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-2-Clause GPL-2.0 LGPL-2.1
@@ -57,15 +57,15 @@ license components for the libbpf package.
 
 
 %prep
-%setup -q -n libbpf-1.4.4
-cd %{_builddir}/libbpf-1.4.4
+%setup -q -n libbpf-1.4.5
+cd %{_builddir}/libbpf-1.4.5
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1720708893
+export SOURCE_DATE_EPOCH=1720796367
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -101,7 +101,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1720708893
+export SOURCE_DATE_EPOCH=1720796367
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libbpf
 cp %{_builddir}/libbpf-%{version}/LICENSE.BSD-2-Clause %{buildroot}/usr/share/package-licenses/libbpf/419ec3c0b11c7d22472ea99c03c347413a4ea406 || :
@@ -136,7 +136,7 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libbpf.so.1
-/usr/lib64/libbpf.so.1.4.4
+/usr/lib64/libbpf.so.1.4.5
 
 %files license
 %defattr(0644,root,root,0755)
